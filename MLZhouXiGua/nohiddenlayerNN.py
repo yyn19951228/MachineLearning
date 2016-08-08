@@ -26,6 +26,8 @@ y = np.array([[0,0,1,1]]).T
 
 np.random.seed(2)
 
+#学习速率
+ita = 1
 #initialize weights randomly with mean 0
 syn0 = 2*np.random.random((3,1))-1
 
@@ -37,7 +39,7 @@ for iter in xrange(10000):
 	# 误差
 	l1_error = y-l1
 	#基于误差的修正值
-	l1_delta = l1_error * nonlin(l1,True)
+	l1_delta = ita* l1_error * nonlin(l1,True)
 
 	syn0 += np.dot(l0.T,l1_delta)
 

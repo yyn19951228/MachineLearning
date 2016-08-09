@@ -23,15 +23,15 @@ x = np.array([
 
 #output dataset
 y = np.array([[1,0,1,1]]).T
-
+print y.shape
 np.random.seed(2)
 
 #学习速率
 ita = 1
 #initialize weights randomly with mean 0
 #连接权值
-syn0 = 2*np.random.random((3,4))-1
-syn1 = 2*np.random.random((4,1))-1
+syn0 = 2*np.random.random((3,5))-1
+syn1 = 2*np.random.random((5,1))-1
 
 for iter in xrange(100000):
 	#forward propagation

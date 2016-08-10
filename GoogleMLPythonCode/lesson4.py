@@ -21,7 +21,7 @@ my_classifier = KNeighborsClassifier()
 
 my_classifier.fit(X_train, Y_train)
 
-predicitions = my_classifier.predict(X_test)
+predicitions = my_classifier.predict(X_test)	
 
 from sklearn.metrics import accuracy_score
 print accuracy_score(Y_test,predicitions)

@@ -29,11 +29,11 @@ class NN():
 	def fit(self):
 		np.random.seed(2)
 		#学习速率
-		ita = 0.2
+		ita = 1
 		#initialize weights randomly with mean 0
 		#连接权值
-		syn0 = 2*np.random.random((len(self.X[0]),self.hn))
-		syn1 = 2*np.random.random((self.hn,len(self.Y[0])))
+		syn0 = 4*np.random.random((len(self.X[0]),self.hn))-2
+		syn1 = 4*np.random.random((self.hn,len(self.Y[0])))-2
 
 		for iter in xrange(self.n):
 			#forward propagation
@@ -64,11 +64,11 @@ class NN():
 		
 
 	def predict(self,X_test):
-		testResult = np.dot(X_test,self.syn0)/10
+		testResult = np.dot(X_test,self.syn0)
 		
-		testResult = np.dot(testResult,self.syn1)/10
+		testResult = np.dot(testResult,self.syn1)
 		
-		return testResult
+		return testResult/300
 
 
 
